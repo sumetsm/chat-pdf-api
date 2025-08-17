@@ -1,0 +1,27 @@
+services:
+  chat-pdf-api:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./pdfs:/app/pdfs
+      - ./chroma_db:/app/chroma_db
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: unless-stopped
+    ports:
+      - "8080:8080"  # เปิด port ให้เข้าถึงจาก host
+    volumes:
+      - ./searxng-settings:/etc/searxng  # ใช้ config ของคุณ
+    environment:
+      - BASE_URL=http://localhost:8080/
+
+
+volumes:
+  ollama_data:

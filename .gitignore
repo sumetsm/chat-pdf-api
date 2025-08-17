@@ -1,0 +1,12 @@
+# Logs / Debug
+*.log
+logs/
+debug.log
+
+# FastAPI / Uvicorn
+*.db
+*.sqlite3
+
+# Chroma DB
+chroma_db/
+*.chroma

@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langgraph
+chromadb
+sentence-transformers
+torch
+transformers
+PyMuPDF
+pypdf
+python-multipart
+pydantic
+requests
+tqdm
+langchain-groq
